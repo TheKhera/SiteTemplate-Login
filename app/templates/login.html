@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="container">
+  		<div class="row">
+  			<div class="col-sm-4"></div>
+  			<div class="col-sm-4">
+  				{% if error %}
+  					<div style="margin-bottom: 2px;" class="alert alert-danger">
+  						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  						<strong>Errore!</strong> {{ error }}
+  					</div>
+  				{% endif %}
+  				<div style="box-shadow: 10px 10px 5px #dedede; border-style: solid; border-width: 1px; border-color: #A4A4A4; background-color: #F2F2F2; padding: 5px; margin: 0px;">
+  				<h1 style="margin-top: 5px;">Benvenuto/a</h1>
+  				<p style="font-size: 90%;">Perfavore, immetere credenziali per accedere al servizio.</p>
+				<form action="{{ url_for('login') }}" method="post">
+					{{ form.csrf_token }}
+					<p>{{ form.username.label(style="font-size: 120%;") }}: {{ form.username(class="form-control", id="inputdefault", type="text", style="font-size: 120%;") }}</p>
+				    <p>{{ form.password.label(style="font-size: 120%;") }}: {{ form.password(class="form-control", id="inputdefault", style="font-size: 120%;") }}</p>
+				    <input type=submit value="Accedi" class="btn btn-primary btn-lg btn-block">
+				</form>
+				</div>
+  			</div>
+		</div>
+	</div>
+  
+{% endblock %}

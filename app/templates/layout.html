@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html lang="it">
+	<head>
+		{% if title %}
+			<title>{{ title }} - Software Login</title>
+		{% else %}
+			<title>Software Login</title>
+		{% endif %}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  		{% block head %}{% endblock %}
+	</head>
+	<body>
+		{% block body %}{% endblock %}
+		<script src="app/static/jquery.min.js"></script>
+    	<script src="app/static/bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>
